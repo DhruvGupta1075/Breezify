@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Front Page</title>
+    <link rel="stylesheet" href="Front Page.css" />
+    <link rel="shortcut icon" href="/Weather App Logo.png" type="image/x-icon"/>
+  </head>
+
+  <body>
+    <div class="main-container">
+      <header>
+        <h1>Breezify</h1>
+      </header>
+
+      <div class="content">
+        <h2>Check the Weather</h2>
+        <div class="container">
+          <div class="type">Get the latest weather updates for your city</div>
+        </div>
+
+        <form id="weather-form" action="/search" method="GET">
+          <input type="text" id="city" name="city" placeholder="Enter city name" required/>
+          <button type="submit">
+            <a href="index.html">Search</a>
+          </button>
+        </form>
+      </div>
+
+      <footer>
+        <p>&copy; 2024 Breezify. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>

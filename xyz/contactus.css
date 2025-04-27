@@ -1,0 +1,419 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* background-color: #f9f9f9; */
+    /* background-image: url(https://img.freepik.com/free-photo/top-view-blue-monday-concept-composition-with-telephone_23-2149139104.jpg); */
+    margin: 0;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #71afc7;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 96.5vw;
+    height: 70px;
+    overflow-x: hidden;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.logo-image {
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.appname {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px;
+}
+
+.appname a {
+    text-decoration: none;
+    color: white;
+}
+
+h1 {
+    font-family: "Arima", system-ui;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #dceaf5;
+    border-radius: 50px;
+    padding: 8px;
+}
+
+.input-search {
+    height: 20px;
+    width: 1px;
+    border: none;
+    padding: 0px;
+    font-size: 14px;
+    outline: none;
+    border-radius: 30px;
+    transition: width 0.5s ease-in-out;
+    background-color: #dceaf5;
+    padding-right: 34px;
+    color: black;
+}
+
+.input-search::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+}
+
+.btn-search {
+    width: 30px;
+    height: 30px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-search i {
+    font-size: 18px;
+}
+
+.btn-search:focus~.input-search,
+.input-search:focus {
+    width: 200px;
+    transition: width 0.5s cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+#signup {
+    height: 43px;
+    width: 50px;
+    border: none;
+    border-radius: 40px;
+    background-color: #dceaf5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#signup a {
+    text-decoration: none;
+    color: black;
+}
+
+.fa-solid {
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        padding: 14px;
+    }
+
+    .appname h1 {
+        font-size: 1.2rem;
+    }
+
+    .input-search:focus {
+        width: 150px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .appname h1 {
+        font-size: 1rem;
+    }
+
+    .input-search:focus {
+        width: 120px;
+    }
+
+    .btn-search,
+    #signup {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+.bg{
+    margin-top: 0;
+    /* width: 100vw; */
+    /* height: 800px; */
+    background-image: url(https://t4.ftcdn.net/jpg/05/04/78/25/360_F_504782581_LHwsDbXlrFiiadWC4i15yV2lhbJnB8g0.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    max-width: 700px;
+    margin-top: 90px;
+    margin-left: 190px;
+}
+
+.contact-form,
+.contact-info {
+    background-color: #fff;
+    padding: 30px;
+    width: 48%;
+}
+
+.contact-form {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.contact-info {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.contact-form h2,
+.contact-info h3,
+.contact-info h1 {
+    margin: 0 0 8px;
+    color: #333;
+}
+
+.contact-form h2{
+    font-size: small;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 85%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.contact-form textarea {
+    height: 100px;
+}
+
+.contact-form button {
+    background-color: #f0a500;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #d18b00;
+}
+
+.contact-info h3{
+    font-style: italic;
+    color: #f0a500;
+}
+
+.contact-info h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.contact-info p {
+    color: #666;
+    margin: 5px 0;
+}
+
+.info div {
+    margin-bottom: 20px;
+}
+
+/* Footer */
+.footer {
+    background: #343434;
+    padding: 35px 0px;
+    font-family: 'Play', sans-serif;
+    text-align: center;
+}
+
+.footer .row {
+    width: 100%;
+    margin: 1% 0%;
+    padding: 0.8% 0%;
+    color: gray;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+}
+
+.socialcard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 25px;
+    padding: 25px 25px;
+    margin: 0 auto;
+    background: transparent;
+}
+
+/* Styling each social media container */
+.socialContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    padding: 10px;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+/* Instagram */
+.containerOne {
+    background-color: transparent;
+}
+
+.containerOne:hover {
+    background-color: #C13584;
+    transition-duration: 0.3s;
+    transform: scale(1.5);
+    border-radius: 15px;
+}
+
+/* Twitter */
+.containerTwo {
+    background-color: transparent;
+}
+
+.containerTwo:hover {
+    background-color: black;
+    transition-duration: 0.3s;
+    transform: scale(1.5);
+    border-radius: 15px;
+}
+
+/* LinkedIn */
+.containerThree {
+    background-color: transparent;
+}
+
+.containerThree:hover {
+    background-color: #005983;
+    transition-duration: 0.3s;
+    transform: scale(1.5);
+    border-radius: 15px;
+}
+
+/* WhatsApp */
+.containerFour {
+    background-color: transparent;
+}
+
+.containerFour:hover {
+    background-color: #1ebe57;
+    transition-duration: 0.3s;
+    transform: scale(1.5);
+    border-radius: 15px;
+}
+
+.socialContainer:active {
+    transform: scale(0.9);
+    transition-duration: 0.3s;
+}
+
+/* Icon colors */
+.socialSvg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+/* Icon hover animation */
+.socialContainer:hover .socialSvg {
+    animation: slide-in-top 0.2s ease-in-out;
+}
+
+/* Slide-in animation */
+@keyframes slide-in-top {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.footer .row a {
+    text-decoration: none;
+    color: gray;
+    transition: 0.5s;
+    margin: 0 10px;
+}
+
+.footer .row a:hover {
+    color: #fff;
+}
+
+.footer .row ul {
+    width: 100%;
+}
+
+.footer .row ul li {
+    display: inline-block;
+    margin: 0px 30px;
+}
+
+.footer .row a i {
+    font-size: 2em;
+    margin: 0% 1%;
+}
+
+#contactus{
+    color: #fff;
+}
+
+/* Responsive for devices with max width of 720px */
+@media (max-width: 720px) {
+    .footer {
+        text-align: left;
+        padding: 5%;
+    }
+
+    .footer .row ul li {
+        display: block;
+        margin: 10px 0px;
+        text-align: left;
+    }
+
+    .footer .row a i {
+        margin: 0% 3%;
+    }
+}

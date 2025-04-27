@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Breezify Signup/Login Page</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="signup.css" />
+  <link rel="icon" href="/Weather App Logo.png" />
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    .form-container {
+      display: none;
+    }
+    .form-container.active {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <video autoplay muted loop id="myVideo">
+    <source src="/bgvideo.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="container">
+    <div class="left">
+      <div class="logo">BREEZIFY</div>
+      <div class="typing-text" id="typing-text"></div>
+    </div>
+
+    <div class="right">
+      <!-- Sign Up Form -->
+      <div id="signup-form" class="form-container active">
+        <h2>Sign Up</h2>
+        <div class="card card--accent">
+          <label class="input">
+            <input class="input__field" type="text" placeholder=" " id="uname" />
+            <span class="input__label">Username</span>
+          </label>
+        </div>
+
+        <div class="card card--accent">
+          <label class="input">
+            <input class="input__field" type="text" placeholder=" " id="email" />
+            <span class="input__label">Email ID</span>
+          </label>
+        </div>
+
+        <div class="card card--accent">
+          <label class="input">
+            <input class="input__field" type="password" placeholder=" " id="signup-password" oninput="checkPasswordStrength()" />
+            <span class="input__label">Password</span>
+          </label>
+        </div>
+
+        <div id="password-strength" style="margin-top: -10px; margin-bottom: 10px; font-size: 12px;"></div>
+
+        <div class="terms">
+          <input id="terms" type="checkbox" />
+          <label for="terms">
+            By creating an account, you agree to our
+            <a href="t&c.html"> terms </a> and
+            <a href="policy.html"> privacy policy </a>.
+          </label>
+        </div>
+
+        <button class="button" onclick="createAccount()" type="button">
+          Create Account
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 
+            9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 
+            10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 
+            1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 
+            1.72a.75.75 0 101.06 1.06l3-3z" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+
+        <div class="terms">
+          <p>Already have an account? <a href="#" onclick="toggleForms()">Login</a></p>
+        </div>
+      </div>
+
+      <!-- Login Form -->
+      <div id="login-form" class="form-container">
+        <h2>Login</h2>
+
+        <div class="card card--accent">
+          <label class="input">
+            <input class="input__field" type="text" placeholder=" " id="login-email" />
+            <span class="input__label">Email ID</span>
+          </label>
+        </div>
+
+        <div class="card card--accent">
+          <label class="input">
+            <input class="input__field" type="password" placeholder=" " id="login-password" />
+            <span class="input__label">Password</span>
+          </label>
+        </div>
+
+        <button class="button" onclick="login()" type="button">
+          Login
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 
+            9.75s4.365 9.75 9.75 9.75 9.75-4.365 
+            9.75-9.75S17.385 2.25 12 2.25zm4.28 
+            10.28a.75.75 0 000-1.06l-3-3a.75.75 
+            0 10-1.06 1.06l1.72 1.72H8.25a.75.75 
+            0 000 1.5h5.69l-1.72 1.72a.75.75 
+            0 101.06 1.06l3-3z" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+
+        <div class="terms">
+          <p>Don't have an account? <a href="#" onclick="toggleForms()">Sign Up</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function checkPasswordStrength() {
+      const password = document.getElementById("signup-password").value;
+      const strengthIndicator = document.getElementById("password-strength");
+
+      const hasMinLength = password.length >= 8;
+      const hasUpperCase = /[A-Z]/.test(password);
+      const hasLowerCase = /[a-z]/.test(password);
+      const hasNumbers = /\d/.test(password);
+      const hasSymbols = /\W/.test(password);
+
+      if (hasMinLength && hasUpperCase && hasLowerCase && hasNumbers && hasSymbols) {
+        strengthIndicator.textContent = "Password strength: Strong";
+        strengthIndicator.style.color = "green";
+      } else if (hasMinLength && (hasUpperCase || hasLowerCase) && (hasNumbers || hasSymbols)) {
+        strengthIndicator.textContent = "Password strength: Medium";
+        strengthIndicator.style.color = "orange";
+      } else {
+        strengthIndicator.textContent = "Password strength: Weak";
+        strengthIndicator.style.color = "red";
+      }
+    }
+
+    function createAccount() {
+      const uname = document.getElementById("uname").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("signup-password").value;
+      const terms = document.getElementById("terms").checked;
+
+      if (!uname || !email || !password) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      if (!terms) {
+        alert("You must agree to the terms and privacy policy.");
+        return;
+      }
+
+      const hasMinLength = password.length >= 8;
+      const hasUpperCase = /[A-Z]/.test(password);
+
+      if (!hasMinLength || !hasUpperCase) {
+        alert("Password must be at least 8 characters long and contain at least one uppercase letter.");
+        return;
+      }
+
+      $.ajax({
+        type: "get",
+        url: "/signup",
+        data: {
+          uname: uname,
+          email: email,
+          txtPwd: password
+        }
+      }).done(function(response) {
+        alert(response);
+        if (response === "Signed up Successfully") {
+          window.location.href = "index.html";
+        }
+      }).fail(function(err) {
+        alert("Error: " + err.statusText);
+      });
+    }
+
+    function login() {
+      const email = document.getElementById("login-email").value;
+      const password = document.getElementById("login-password").value;
+
+      if (!email || !password) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      $.ajax({
+        type: "get",
+        url: "/login",
+        data: {
+          txtEmaillog: email,
+          txtPwdlog: password
+        }
+      }).done(function(response) {
+        alert(response);
+        if (response === "Welcome sir") {
+          location.href = "index.html";
+        }
+      }).fail(function(err) {
+        alert("Error: " + err.statusText);
+      });
+    }
+
+    function toggleForms() {
+      document.getElementById("signup-form").classList.toggle("active");
+      document.getElementById("login-form").classList.toggle("active");
+    }
+
+    // Typing text animation
+    const text = "Your Daily Weather Simplified";
+    const typingText = document.getElementById("typing-text");
+    let index = 0;
+
+    function type() {
+      if (index < text.length) {
+        typingText.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 100);
+      } else {
+        setTimeout(() => {
+          typingText.textContent = "";
+          index = 0;
+          type();
+        }, 2000);
+      }
+    }
+
+    window.onload = type;
+  </script>
+</body>
+</html>

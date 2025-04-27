@@ -1,0 +1,391 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #34495e;
+    background-color: #E4EAF2;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #71afc7;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 70px;
+    overflow-x: hidden;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.logo-image {
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.appname {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px;
+}
+
+.appname a {
+    text-decoration: none;
+    color: white;
+}
+
+h1 {
+    font-family: "Arima", system-ui;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #dceaf5;
+    border-radius: 50px;
+    padding: 8px;
+}
+
+.input-search {
+    height: 25px;
+    width: 30px;
+    border: none;
+    padding: 0px;
+    font-size: 14px;
+    outline: none;
+    border-radius: 30px;
+    transition: width 0.5s ease-in-out;
+    background-color: #dceaf5;
+    padding-right: 34px;
+    color: black;
+}
+
+.input-search::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+}
+
+.btn-search {
+    width: 30px;
+    height: 30px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-search i {
+    font-size: 18px;
+}
+
+.btn-search:focus~.input-search,
+.input-search:focus {
+    width: 200px;
+    transition: width 0.5s cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+#signup {
+    height: 43px;
+    width: 50px;
+    border: none;
+    border-radius: 40px;
+    background-color: #dceaf5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#signup a {
+    text-decoration: none;
+    color: black;
+}
+
+.fa-solid {
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        padding: 14px;
+    }
+
+    .appname h1 {
+        font-size: 1.2rem;
+    }
+
+    .input-search:focus {
+        width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .appname h1 {
+        font-size: 1rem;
+    }
+
+    .input-search:focus {
+        width: 120px;
+    }
+
+    .btn-search,
+    #signup {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+#heading {
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 110px auto 20px;
+    padding: 20px;
+}
+
+.content h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+h2 {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-top: 2rem;
+}
+
+.last-updated {
+    font-style: italic;
+    text-align: right;
+    margin-top: 10px;
+    color: #2c3e50;
+}
+
+.content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: -50px;
+    position: relative;
+    z-index: 2;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.highlight {
+    background-color: rgba(52, 152, 219, 0.1);
+    border-left: 4px solid #3498db;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+/* Footer */
+.footer {
+    background: #343434;
+    padding: 35px 0px;
+    font-family: 'Play', sans-serif;
+    text-align: center;
+}
+
+.footer .row {
+    width: 100%;
+    margin: 1% 0%;
+    padding: 0.8% 0%;
+    color: gray;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+}
+
+.socialcard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 25px;
+    padding: 25px 25px;
+    margin: 0 auto;
+    background: transparent;
+}
+
+/* Styling each social media container */
+.socialContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    padding: 10px;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+/* Instagram */
+.containerOne {
+    background-color: transparent;
+}
+
+.containerOne:hover {
+    background-color: #C13584;
+    transition-duration: 0.3s;
+    transform: scale(1.5);
+    border-radius: 15px;
+}
+
+/* Twitter */
+.containerTwo {
+    background-color: transparent;
+}
+
+.containerTwo:hover {
+    background-color: black;
+    transition-duration: 0.3s;
+    transform: scale(1.5);
+    border-radius: 15px;
+}
+
+/* LinkedIn */
+.containerThree {
+    background-color: transparent;
+}
+
+.containerThree:hover {
+    background-color: #005983;
+    transition-duration: 0.3s;
+    transform: scale(1.5);
+    border-radius: 15px;
+}
+
+/* WhatsApp */
+.containerFour {
+    background-color: transparent;
+}
+
+.containerFour:hover {
+    background-color: #1ebe57;
+    transition-duration: 0.3s;
+    transform: scale(1.5);
+    border-radius: 15px;
+}
+
+.socialContainer:active {
+    transform: scale(0.9);
+    transition-duration: 0.3s;
+}
+
+/* Icon colors */
+.socialSvg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+/* Icon hover animation */
+.socialContainer:hover .socialSvg {
+    animation: slide-in-top 0.2s ease-in-out;
+}
+
+/* Slide-in animation */
+@keyframes slide-in-top {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.footer .row a {
+    text-decoration: none;
+    color: gray;
+    transition: 0.5s;
+    margin: 0 10px;
+}
+
+.footer .row a:hover {
+    color: #fff;
+}
+
+.footer .row ul {
+    width: 100%;
+}
+
+.footer .row ul li {
+    display: inline-block;
+    margin: 0px 30px;
+}
+
+.footer .row a i {
+    font-size: 2em;
+    margin: 0% 1%;
+}
+
+#policy{
+    color: #fff;
+}
+
+/* Responsive for devices with max width of 720px */
+@media (max-width: 720px) {
+    .footer {
+        text-align: left;
+        padding: 5%;
+    }
+
+    .footer .row ul li {
+        display: block;
+        margin: 10px 0px;
+        text-align: left;
+    }
+
+    .footer .row a i {
+        margin: 0% 3%;
+    }
+}

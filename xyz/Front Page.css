@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: 100% 100%;
+    animation: bgimage 10s ease-in-out infinite;
+}
+
+@keyframes bgimage{
+    0%{background-image: url(https://wallpapercave.com/wp/wp10154399.jpg);}
+    30%{background-image: url(https://wallpapercave.com/wp/wp8266420.jpg);}
+    60%{background-image: url(https://wallpapercave.com/wp/wp8403093.jpg);}
+    100%{background-image: url(https://wallpapercave.com/wp/wp8403192.jpg);}
+}
+
+.main-container {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 2px solid white;
+    backdrop-filter: blur(8px);
+    max-width: 600px;
+    width: 100%;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    color: #333;
+    font-size: 2.5rem;
+    text-shadow: -5px 5px 9px ;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-top: 1rem;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #4facfe;
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: -5px 5px 8px ;
+} 
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.type {
+    width: 87%;
+    animation: typing 3s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+#weather-form input {
+    padding: 0.75rem;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-right: 1rem;
+}
+
+#weather-form button {
+    padding: 0.75rem 1.5rem;
+    background-color: #4facfe;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+#weather-form a{
+    text-decoration: none;
+    color: white;
+}
+
+#weather-form button:hover {
+    background-color: #00c3ff;
+}
+
+footer {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #000000;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+  
+    .main-container {
+        padding: 1.5rem;
+    }
+  
+    .type {
+        font-size: 1rem;
+        width: 100%;
+    }
+  
+    #weather-form input {
+        width: 65%;
+        font-size: 0.9rem;
+    }
+  
+    #weather-form button {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+  
+    .content h2 {
+        font-size: 1.5rem;
+    }
+  
+    .main-container {
+        padding: 1rem;
+    }
+  
+    .type {
+        font-size: 0.9rem;
+        width: 100%;
+    }
+  
+    #weather-form input {
+        width: 100%;
+        margin: 0.5rem 0;
+        font-size: 0.9rem;
+    }
+  
+    #weather-form button {
+        width: 100%;
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+    }
+}

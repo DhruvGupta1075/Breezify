@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Breezify-"Your Daily Weather Simplified"</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="icon" href="/Weather App Logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <div class="appname">
+      <a href="#"><img class="logo-image" src="/Weather App Logo.png" alt="" height="50px" /></a>
+      <a href="#" ><h1>Breezify</h1></a>
+    </div>
+
+    <div class="header-right">
+
+      <nav class="search-box">
+        <button class="btn-search" id="searchBtn"><i class="fas fa-search"></i></button>
+        <input type="text" class="input-search" id="searchInput" placeholder="Enter Your Location..." />
+      </nav>
+      <div class="convert-buttons">
+        <button id="tempToggleBtn" class="convert-circle">°F</button>
+        <button id="darkModeBtn" class="convert-circle">
+          <i class="fas fa-sun"></i>
+        </button>
+      </div>
+      <button id="signup">
+        <a href="Signup.html">
+          <i class="fa-solid fa-user-plus" style="color: #0d0d0d"></i></a>
+      </button>
+    </div>
+  </header>
+  <div class="today">
+    <div class="weather">
+      <h1 id="temp">Current Temperature in City</h1>
+    </div>
+    <div class="heading">
+      <h2>Today's highlights</h2>
+    </div>
+    <div class="main">
+      <div class="highlight-cards">
+        <div class="highlight-card">
+          <h4>UV Index</h4>
+          <p class="data">4</p>
+          <p class="status">Moderate</p>
+        </div>
+        <div class="highlight-card">
+          <h4>Wind Status</h4>
+          <p class="data">12</p>
+          <p class="status">km/h</p>
+        </div>
+        <div class="highlight-card" id="Sunrise">
+          <h4>Sunrise & Sunset</h4>
+
+          <div class="sun-container">
+            <div class="suntime time-start">6:41 am</div>
+            <div class="suntime time-end">5:32 pm</div>
+            <div class="arc"></div>
+            <div class="sun"></div>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <h4>Humidity</h4>
+          <p class="data">50%</p>
+          <p class="status">Normal</p>
+        </div>
+        <div class="highlight-card">
+          <h4>Visibility</h4>
+          <p class="data">14.48</p>
+          <p class="status">km</p>
+        </div>
+        <div class="highlight-card">
+          <h4>Air Quality</h4>
+          <p class="data">326</p>
+          <p class="status">Very Poor</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hourcontainer">
+    <div class="hourlyweather">
+      <h2>Hourly Weather</h2>
+      <div class="divider"></div>
+      <div class="hourly">
+        <div class="hour">
+          <div class="time" id="currenttime">10 AM</div>
+          <div class="icon-temp">
+            <i class="fa-solid fa-sun fa-2xl" style="color: #ffd43b"></i>
+            <div class="temp">
+              <span class="high-temp">30°</span>
+            </div>
+          </div>
+          <div class="condition">Partly Cloudy</div>
+          <div class="rain-chance">
+            <img src="/rain.png" alt="Rain Chance" /> 0%
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="hour">
+          <div class="time" id="currenttime1">11 AM</div>
+          <div class="icon-temp">
+            <i class="fa-solid fa-sun fa-2xl" style="color: #ffd43b"></i>
+            <div class="temp">
+              <span class="high-temp">30°</span>
+            </div>
+          </div>
+          <div class="condition">Sunny and Humid</div>
+          <div class="rain-chance">
+            <img src="/rain.png" alt="Rain Chance" /> 0%
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="hour">
+          <div class="time" id="currenttime2">12 PM</div>
+          <div class="icon-temp">
+            <i class="fa-duotone fa-solid fa-cloud-sun fa-2xl" style="
+                  --fa-primary-color: #a7abae;
+                  --fa-secondary-color: #f0ea38;
+                  --fa-secondary-opacity: 1;
+                "></i>
+            <div class="temp">
+              <span class="high-temp">31°</span>
+            </div>
+          </div>
+          <div class="condition">Partly cloudy</div>
+          <div class="rain-chance">
+            <img src="/rain.png" alt="Rain Chance" /> 0%
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="hour">
+          <div class="time" id="currenttime3">1 PM</div>
+          <div class="icon-temp">
+            <i class="fa-solid fa-cloud-sun fa-2xl"></i>
+            <div class="temp">
+              <span class="high-temp">29°</span>
+            </div>
+          </div>
+          <div class="condition">Mostly Sunny</div>
+          <div class="rain-chance">
+            <img src="/rain.png" alt="Rain Chance" /> 1%
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="hour">
+          <div class="time" id="currenttime4">2 PM</div>
+          <div class="icon-temp">
+            <i class="fa-solid fa-sun fa-2xl" style="color: #ffd43b"></i>
+            <div class="temp">
+              <span class="high-temp">27°</span>
+            </div>
+          </div>
+          <div class="condition">Sunny</div>
+          <div class="rain-chance">
+            <img src="/rain.png" alt="Rain Chance" /> 2%
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="hour">
+          <div class="time" id="currenttime5">3 PM</div>
+          <div class="icon-temp">
+            <i class="fa-solid fa-sun fa-2xl" style="color: #ffd43b"></i>
+            <div class="temp">
+              <span class="high-temp">25°</span>
+            </div>
+          </div>
+          <div class="condition">Very warm with Sun</div>
+          <div class="rain-chance">
+            <img src="/rain.png" alt="Rain Chance" /> 0%
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="hour">
+          <div class="time" id="currenttime6">4 PM</div>
+          <div class="icon-temp">
+            <i class="fa-solid fa-cloud-sun fa-2xl"></i>
+            <div class="temp">
+              <span class="high-temp">23°</span>
+            </div>
+          </div>
+          <div class="condition">Mostly sunny</div>
+          <div class="rain-chance">
+            <img src="/rain.png" alt="Rain Chance" /> 0%
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="hour">
+          <div class="time" id="currenttime7">5 PM</div>
+          <div class="icon-temp">
+            <i class="fa-solid fa-cloud-sun fa-2xl"></i>
+            <div class="temp">
+              <span class="high-temp">22°</span>
+            </div>
+          </div>
+          <div class="condition">Clear</div>
+          <div class="rain-chance">
+            <img src="/rain.png" alt="Rain Chance" /> 0%
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="map-container">
+      <a href="/Map/map3.html" target="_blank" class="open-map-link">
+        Open Map
+      </a>
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30773484.55170563!2d61.0245165611659!3d19.69009515037612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b791%3A0xd78c4fa1854213a6!2sIndia!5e0!3m2!1sen!2sin!4v1727340694161!5m2!1sen!2sin"
+          width="650"
+          height="700"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>      
+  </div>
+
+  <h2 style="text-align: center">10-Day Forecast</h2>
+  <div class="wrapper">
+    <i id="left" class="fa-solid fas fa-angle-left"></i>
+    <ul class="carousel">
+      <li class="card">
+        <div class="day">Monday</div>
+        <div class="icon">
+        </div>
+        <div class="temperature">31°C</div>
+      </li>
+      <li class="card">
+        <div class="day">Tuesday</div>
+        <div class="icon">
+        </div>
+        <div class="temperature">31°C</div>
+      </li>
+      <li class="card">
+        <div class="day">Wednesday</div>
+        <div class="icon">
+        </div>
+        <div class="temperature">32°C</div>
+      </li>
+      <li class="card">
+        <div class="day">Thursday</div>
+        <div class="icon">
+        </div>
+        <div class="temperature">32°C</div>
+      </li>
+      <li class="card">
+        <div class="day">Friday</div>
+        <div class="icon">
+        </div>
+        <div class="temperature">31°C</div>
+      </li>
+      <li class="card">
+        <div class="day">Saturday</div>
+        <div class="icon">
+        </div>
+        <div class="temperature">31°C</div>
+      </li>
+      <li class="card">
+        <div class="day">Sunday</div>
+        <div class="icon">
+        </div>
+        <div class="temperature">33°C</div>
+      </li>
+      <li class="card">
+        <div class="day">Monday</div>
+        <div class="icon">
+        
+        </div>
+        <div class="temperature">33°C</div>
+      </li>
+      <li class="card">
+        <div class="day">Tuesday</div>
+        <div class="icon">
+        </div>
+        <div class="temperature">34°C</div>
+      </li>
+      <li class="card">
+        <div class="day">Wednesday</div>
+        <div class="icon">
+        </div>
+        <div class="temperature">32°C</div>
+      </li>
+    </ul>
+    <i id="right" class="fa-solid fas fa-angle-right"></i>
+  </div>
+
+  <div class="news">
+    <h2
+      style="
+        text-align: center;
+        font-family: Arial, sans-serif;
+        margin-bottom: 30px;
+        margin-top: 30px;
+      "
+    >
+      Weather News
+    </h2>
+
+    <div class="news-container">
+      <div class="news-card">
+          <img src="https://www.financialexpress.com/wp-content/uploads/2024/11/Untitled-design-2021-12-17T090247.024.jpg?w=1024" alt="IMD predicts dense fog in Delhi, UP, Himachal" class="card-image">
+          <div class="text-container">
+              <h2 class="title"><a href="https://www.financialexpress.com/india-news/weather-alert-imd-predicts-dense-fog-in-delhi-up-himachal-rainfall-likely-in-parts-of-south-northeast-india-check-forecast-here/3669658/">IMD predicts dense fog in Delhi, UP, Himachal</a></h2>
+              <p class="summary">The India Meteorological Department (IMD) has predicted dense to very dense fog conditions in parts of northwest India during the night and early morning hours over the next five days. </p>
+          </div>
+      </div>
+      <div class="news-card">
+          <img src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1nmocv.img?w=549&h=309&m=6&x=68&y=94&s=37&d=37" alt="Climate Summit Reaches Agreement" class="card-image">
+          <div class="text-container">
+              <h2 class="title"><a href="https://www.msn.com/en-in/news/India/goa-weather-and-aqi-today-warm-start-at-20-7-c-check-weather-forecast-for-november-20-2024/ar-AA1uoEVC?ocid=BingNewsVerp">Goa Weather and AQI Today: Warm start at 20.7 °C</a></h2>
+              <p class="summary">The temperature in Goa today, on November 20, 2024, is 28.79 °C. The day's forecast indicates a minimum and maximum temperature of 20.7 °C and 32.43 °C, respectively. </p>
+          </div>
+      </div>
+      <div class="news-card">
+          <img src="https://www.bing.com/th?id=OVFT.UzJtHWknshQHusHdoD2V7C&pid=News&w=234&h=132&c=14&rs=2&qlt=90&dpr=1.3" alt="Space Tourism Takes Off" class="card-image">
+          <div class="text-container">
+              <h2 class="title"><a href="https://www.indiatvnews.com/west-bengal/kolkata-west-bengal-weather-update-temperature-dips-across-various-places-darjeeling-purulia-coldest-coochbehar-2024-11-19-962352">West Bengal weather: Temperature dips across various places, Darjeeling coldest with 8.6 degree Celsius</a></h2>
+              <p class="summary">In terms of drop in temperature, Purulia recorded the maximum fall in temperature with a dip of 5 degrees Celsius followed by, 4.6 degrees Celsius in Jharbam, and 3.6 degrees Celsius in Kalimpong.</p>
+          </div>
+      </div>
+      <div class="news-card">
+          <img src="https://www.bing.com/th?id=OVFT.zGbKObRJrT0NUbtGBVkHXy&pid=News&w=234&h=132&c=14&rs=2&qlt=90&dpr=1.3" alt="Global Economy Shows Signs of Recovery" class="card-image">
+          <div class="text-container">
+              <h2 class="title"><a href="https://www.msn.com/en-in/news/India/bengaluru-weather-city-to-experience-moderate-rainfall-cooler-temperatures-anticipated/ar-AA1u7mru?ocid=BingNewsVerp">Bengaluru Weather: City To Experience Moderate Rainfall; Cooler Temperatures Anticipated</a></h2>
+              <p class="summary">The city is set to experience moderate rainfall on Friday (November 15). The citizens witnessed sunrise at 06:18 am.</p>
+          </div>
+      </div>
+
+      <div class="news-card">
+          <img src="https://www.financialexpress.com/wp-content/uploads/2024/11/winters_21ebfe.jpg?w=1024" alt="Global Economy Shows Signs of Recovery" class="card-image">
+          <div class="text-container">
+              <h2 class="title"><a href="https://www.financialexpress.com/india-news/weather-forecast-today-snowfall-in-kashmir-wintry-chill-in-himachal-and-desne-fog-in-delhi-imd-predicts-drop-in-temperatures-across-india/3667058/">Snowfall in Kashmir, wintry chill in Himachal and dense fog in Delhi </a></h2>
+              <p class="summary">The India Meteorological Department (IMD) in its latest weather forecast informed that the minimum temperatures are expected to drop by 2-3 degrees Celsius over most parts of northwest, central, east, and west India in the coming five days. </p>
+          </div>
+      </div>
+      <div class="news-card">
+          <img src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1ujYAI.img?w=550&h=309&m=6" alt="Global Economy Shows Signs of Recovery" class="card-image">
+          <div class="text-container">
+              <h2 class="title"><a href="https://www.msn.com/en-in/news/India/railways-announces-cancellation-of-trains-due-to-foggy-weather/ar-AA1uk8df?ocid=BingNewsVerp">Railways announces cancellation of trains due to foggy weather</a></h2>
+              <p class="summary">A total of 22 trains have been cancelled, two trains will run with reduced destinations, and four trains face partial cancellations in Northern railway in anticipation of foggy weather during the winter season.</p>
+          </div>
+      </div>
+      <div class="news-card">
+          <img src="https://www.hindustantimes.com/ht-img/img/2024/11/08/550x309/In-Assam--heavy-rains--floods--and-landslides-were_1731052410048.jpg" alt="Global Economy Shows Signs of Recovery" class="card-image">
+          <div class="text-container">
+              <h2 class="title"><a href="https://www.hindustantimes.com/india-news/india-faced-extreme-weather-events-on-93-of-days-in-9-months-of-2024-report-101731052418153.html">India faced extreme weather events on 93% of days in 9 months of 2024: Report</a></h2>
+              <p class="summary">India faced extreme weather events reflecting climate change impact on 93% of the days—255 out of 274—in the first nine months of this year marked by heat and cold waves, cyclones, lightning, heavy rain, floods, and landslides </p>
+          </div>
+      </div>
+      <div class="news-card">
+          <img src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1umCZD.img?w=768&h=512&m=6" alt="Global Economy Shows Signs of Recovery" class="card-image">
+          <div class="text-container">
+              <h2 class="title"><a href="https://www.msn.com/en-us/weather/other/bomb-cyclone-to-bring-an-array-of-weather-problems-to-the-pacific-northwest/ar-AA1umH4M?ocid=BingNewsVerp#">Bomb cyclone to bring an array of weather problems to the Pacific Northwest</a></h2>
+              <p class="summary">A powerful winter storm brewing near the Pacific Northwest is forecast to bring damaging gusts, feet of mountain snow and heavy rain to parts of California, Oregon and Washington that could trigger flooding, mudslides and rock slides in the region.</p>
+          </div>
+      </div>
+    </div>
+    <button id="seeBtn" onclick="seeMore()">See More <i class="fa-solid fa-caret-down"></i></button>
+  </div>
+
+  <footer>
+    <div class="footer">
+      <div class="socialcard">
+        <a href="#" class="socialContainer containerOne">
+          <svg class="socialSvg instagramSvg" viewBox="0 0 16 16">
+            <path
+              d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+          </svg>
+        </a>
+
+        <a href="#" class="socialContainer containerTwo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="socialSvg twitterSvg" viewBox="0 0 16 16">
+            <path
+              d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+          </svg>
+        </a>
+
+        <a href="linkedin.com/in/dhruv-bansal-6922a230a" class="socialContainer containerThree">
+          <svg class="socialSvg linkdinSvg" viewBox="0 0 448 512">
+            <path
+              d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z" />
+          </svg>
+        </a>
+
+        <a href="#" class="socialContainer containerFour">
+          <svg class="socialSvg whatsappSvg" viewBox="0 0 16 16">
+            <path
+              d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.447.099s-.51.646-.625.782c-.115.13-.23.146-.427.049-.197-.098-.832-.307-1.586-.98-.586-.522-.982-1.165-1.096-1.362-.114-.197-.012-.302.086-.401.088-.088.197-.23.295-.345.099-.115.13-.197.197-.328.066-.13.033-.246-.016-.345-.048-.099-.447-1.078-.611-1.473-.16-.383-.323-.33-.447-.335l-.382-.007a.865.865 0 0 0-.63.296c-.216.23-.822.804-.822 1.961s.842 2.273.959 2.432c.115.146 1.652 2.52 4.007 3.386.56.243.996.388 1.337.497.561.179 1.07.154 1.473.093.449-.067 1.17-.48 1.335-.943.164-.461.164-.857.115-.943-.05-.088-.182-.13-.38-.23z" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="row">
+        <ul>
+          <li><a href="contactus.html">Contact Us</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="policy.html">Privacy Policy</a></li>
+          <li><a href="t&c.html">Terms & Conditions</a></li>
+          <li><a href="faqs.html">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="row">
+        BREEZIFY Copyright © 2024 Breezify - All rights reserved || Designed
+        By: Dhruv Gupta, Dhruv Bansal, Devam Vashisht.
+      </div>
+    </div>
+  </footer>
+  <script>
+    const hourlyTemps = document.querySelectorAll(".hourly .high-temp");
+    const tenDayTemps = document.querySelectorAll(".carousel .temperature");
+
+    let isCelsius = true;
+    const tempToggleBtn = document.getElementById("tempToggleBtn");
+
+    function toFahrenheit(celsius) {
+      return (celsius * 9) / 5 + 32;
+    }
+
+    function toCelsius(fahrenheit) {
+      return ((fahrenheit - 32) * 5) / 9;
+    }
+
+    function convertToFahrenheit() {
+      hourlyTemps.forEach((temp) => {
+        let celsiusValue = parseFloat(temp.innerText);
+        temp.innerText = ${toFahrenheit(celsiusValue).toFixed(1)}°F;
+      });
+      tenDayTemps.forEach((temp) => {
+        let celsiusValue = parseFloat(temp.innerText);
+        temp.innerText = ${toFahrenheit(celsiusValue).toFixed(1)}°F;
+      });
+      tempToggleBtn.textContent = "°C";
+      isCelsius = false;
+    }
+
+    function convertToCelsius() {
+      hourlyTemps.forEach((temp) => {
+        let fahrenheitValue = parseFloat(temp.innerText);
+        temp.innerText = ${toCelsius(fahrenheitValue).toFixed(1)}°C;
+      });
+      tenDayTemps.forEach((temp) => {
+        let fahrenheitValue = parseFloat(temp.innerText);
+        temp.innerText = ${toCelsius(fahrenheitValue).toFixed(1)}°C;
+      });
+      tempToggleBtn.textContent = "°F";
+      isCelsius = true;
+    }
+
+    tempToggleBtn.addEventListener("click", () => {
+      if (isCelsius) {
+        convertToFahrenheit();
+      } else {
+        convertToCelsius();
+      }
+    });
+    const highlightCards = document.querySelectorAll(".highlight-card");
+
+    highlightCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        highlightCards.forEach((c) => c.classList.remove("active"));
+        card.classList.add("active");
+      });
+    });
+    
+    document.addEventListener("DOMContentLoaded", function () {
+      const carousel = document.querySelector(".carousel");
+      const arrowBtns = document.querySelectorAll(".wrapper i");
+      const leftBtn = document.getElementById("left");
+      const rightBtn = document.getElementById("right");
+      const firstCard = carousel.querySelector(".card");
+      const firstCardWidth = firstCard.offsetWidth;
+
+      let isDragging = false,
+        startX,
+        startScrollLeft,
+        timeoutId;
+
+      const dragStart = (e) => {
+        isDragging = true;
+        carousel.classList.add("dragging");
+        startX = e.pageX;
+        startScrollLeft = carousel.scrollLeft;
+      };
+
+      const dragging = (e) => {
+        if (!isDragging) return;
+        carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+        toggleArrowVisibility();
+      };
+
+      const dragStop = () => {
+        isDragging = false;
+        carousel.classList.remove("dragging");
+        toggleArrowVisibility();
+      };
+
+      const autoPlay = () => {
+        if (window.innerWidth < 800) return;
+        timeoutId = setTimeout(() => {
+          carousel.scrollLeft += firstCardWidth;
+          toggleArrowVisibility();
+        }, 2500);
+      };
+
+      const toggleArrowVisibility = () => {
+        const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+
+        leftBtn.style.display = carousel.scrollLeft <= 1 ? "none" : "block";
+
+        rightBtn.style.display =
+          carousel.scrollLeft >= maxScrollLeft - 1 ? "none" : "block";
+      };
+
+      carousel.addEventListener("mousedown", dragStart);
+      carousel.addEventListener("mousemove", dragging);
+      document.addEventListener("mouseup", dragStop);
+      carousel.addEventListener("scroll", toggleArrowVisibility);
+
+      arrowBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          carousel.scrollLeft +=
+            btn.id === "left" ? -firstCardWidth : firstCardWidth;
+          toggleArrowVisibility();
+        });
+      });
+
+      toggleArrowVisibility();
+    });
+    const daysOfWeek = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    const today = new Date().getDay();
+
+    const dayElements = document.querySelectorAll(".carousel .day");
+    dayElements.forEach((dayElement, index) => {
+      const dayIndex = (today + index) % 7;
+      dayElement.textContent = daysOfWeek[dayIndex + 1];
+    });
+    async function fetchWeather(city) {
+    const apiKey = '677f9bb1a17b45e8a61181306251404 '; 
+    try {
+      const response = await fetch("https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=10&aqi=yes");
+      if (!response.ok) throw new Error(HTTP Error: ${response.status});
+      const data = await response.json();
+
+      // Update UI
+      updateCurrentWeather(data);
+      updateHighlights(data);
+      updateHourlyForecast(data.forecast.forecastday[0].hour);
+      update10DayForecast(data.forecast.forecastday);
+    } catch (error) {
+      console.error('Error fetching weather data:', error);
+      alert('Failed to fetch weather data. Please try again.');
+    }
+  }
+
+  // Update Current Weather
+  function updateCurrentWeather(data) {
+    const currentTempElem = document.getElementById('temp');
+    currentTempElem.innerText = Current Temperature in ${data.location.name}: ${data.current.temp_c}°C;
+  }
+
+  // Update Today's Highlights
+  function updateHighlights(data) {
+    // UV Index
+    const uvIndexCard = document.querySelector('.highlight-cards .highlight-card:nth-child(1)');
+    uvIndexCard.querySelector('.data').innerText = data.current.uv || 'No Data';
+    uvIndexCard.querySelector('.status').innerText = data.current.uv > 5 ? 'High' : 'Moderate';
+
+    // Wind Status
+    const windCard = document.querySelector('.highlight-cards .highlight-card:nth-child(2)');
+    windCard.querySelector('.data').innerText = ${data.current.wind_kph} km/h;
+    windCard.querySelector('.status').innerText = data.current.wind_dir;
+
+    // Sunrise & Sunset
+    const sunriseCard = document.querySelector('#Sunrise');
+    sunriseCard.querySelector('.time-start').innerText = data.forecast.forecastday[0].astro.sunrise;
+    sunriseCard.querySelector('.time-end').innerText = data.forecast.forecastday[0].astro.sunset;
+
+    // Humidity
+    const humidityCard = document.querySelector('.highlight-cards .highlight-card:nth-child(4)');
+    humidityCard.querySelector('.data').innerText = ${data.current.humidity}%;
+    humidityCard.querySelector('.status').innerText = data.current.humidity > 70 ? 'High' : 'Normal';
+
+    // Visibility
+    const visibilityCard = document.querySelector('.highlight-cards .highlight-card:nth-child(5)');
+    visibilityCard.querySelector('.data').innerText = ${data.current.vis_km} km;
+    visibilityCard.querySelector('.status').innerText = data.current.vis_km < 5 ? 'Poor' : 'Good';
+
+    // Air Quality
+    const airQualityCard = document.querySelector('.highlight-cards .highlight-card:nth-child(6)');
+    const airQuality = data.current.air_quality?.pm2_5 || 'No Data';
+    airQualityCard.querySelector('.data').innerText = airQuality.toFixed(1);
+    airQualityCard.querySelector('.status').innerText = airQuality > 150 ? 'Very Poor' : 'Good';
+  }
+
+  // Update Hourly Forecast
+  function updateHourlyForecast(hourlyData) {
+    const currentHour = new Date().getHours();
+    const filteredHours = hourlyData.filter(hour => new Date(hour.time).getHours() >= currentHour);
+    const hourBlocks = document.querySelectorAll('.hour');
+
+    for (let i = 0; i < hourBlocks.length; i++) {
+      const hourBlock = hourBlocks[i];
+
+      if (i < filteredHours.length) {
+        const hour = filteredHours[i];
+        hourBlock.querySelector('.time').innerText = new Date(hour.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        hourBlock.querySelector('.temp .high-temp').innerText = ${hour.temp_c}°;
+        hourBlock.querySelector('.condition').innerText = hour.condition.text;
+        hourBlock.querySelector('.rain-chance img').nextSibling.textContent = ` ${hour.chance_of_rain}%`;
+
+        const iconElem = hourBlock.querySelector('.icon-temp i');
+        iconElem.className = 'fa-solid fa-2xl';
+        updateWeatherIcon(iconElem, hour.condition.text);
+      } else {
+        hourBlock.querySelector('.time').innerText = 'No Data';
+        hourBlock.querySelector('.temp .high-temp').innerText = '';
+        hourBlock.querySelector('.condition').innerText = 'No Data';
+        hourBlock.querySelector('.rain-chance img').nextSibling.textContent = '';
+        hourBlock.querySelector('.icon-temp i').className = 'fa-solid fa-question';
+      }
+    }
+  }
+
+  // Update 10-Day Forecast
+  function update10DayForecast(forecastDays) {
+    const carousel = document.querySelector('.carousel');
+    carousel.innerHTML = '';
+
+    forecastDays.forEach(day => {
+      const card = document.createElement('li');
+      card.classList.add('card');
+      card.innerHTML = `
+        <div class="day">${new Date(day.date).toLocaleDateString('en-US', { weekday: 'short' })}</div>
+        <div class="icon">
+          <img src="${day.day.condition.icon}" alt="${day.day.condition.text}" />
+        </div>
+        <div class="temperature">${day.day.avgtemp_c}°C</div>
+      `;
+      carousel.appendChild(card);
+    });
+  }
+
+  // Update Weather Icon
+  function updateWeatherIcon(iconElem, condition) {
+    switch (condition.toLowerCase()) {
+      case 'sunny':
+        iconElem.classList.add('fa-sun');
+        iconElem.style.color = '#ffd43b';
+        break;
+      case 'partly cloudy':
+        iconElem.classList.add('fa-cloud-sun');
+        iconElem.style.color = '#a7abae';
+        break;
+      case 'rain':
+        iconElem.classList.add('fa-cloud-rain');
+        iconElem.style.color = '#007bff';
+        break;
+      default:
+        iconElem.classList.add('fa-cloud');
+        iconElem.style.color = '#a7abae';
+    }
+  }
+
+  // Dark Mode Toggle
+  const darkModeBtn = document.getElementById('darkModeBtn');
+  darkModeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    darkModeBtn.innerHTML = document.body.classList.contains('dark-mode')
+      ? '<i class="fas fa-sun"></i>'
+      : '<i class="fas fa-moon"></i>';
+  });
+
+  // See More 
+  function seeMore() {
+    const div = document.querySelector('.news-container');
+    const seeBtn = document.getElementById('seeBtn');
+    if (div) {
+      const currentHeight = window.getComputedStyle(div).height;
+      if (currentHeight === '300px') {
+        div.style.height = 'fit-content';
+        seeBtn.innerHTML = 'See Less <i class="fa-solid fa-caret-up"></i>';
+      } else {
+        div.style.height = '300px';
+        seeBtn.innerHTML = 'See More <i class="fa-solid fa-caret-down"></i>';
+      }
+    } else {
+      console.error('No element found with the class "news-container".');
+    }
+  }
+
+  // Event listeners for search functionality
+  document.getElementById('searchBtn').addEventListener('click', () => {
+    const city = document.getElementById('searchInput').value.trim();
+    if (city) fetchWeather(city);
+    else alert('Please enter a city name.');
+  });
+
+  document.getElementById('searchInput').addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') document.getElementById('searchBtn').click();
+  });
+
+  // Default city
+  window.onload = () => fetchWeather('rajpura ');
+</script>
+
+</body>
+
+</html>
