@@ -1,0 +1,473 @@
+/* ==========================================================================
+   Breezify 3D Scene & Weather Object Animations
+   ========================================================================== */
+
+.hero-fullwidth-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 80px;
+  overflow: hidden;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.live-reading-hero {
+  position: relative;
+  max-width: 1100px;
+  margin: 20px auto 30px;
+  padding: 30px 20px 20px;
+  text-align: center;
+  overflow: visible;
+  z-index: 2;
+}
+
+.hero-3d-scene-full {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 1;
+  transform-style: preserve-3d;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.object-3d {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+/* 3D Glowing Sun */
+.sun-3d {
+  top: 10px;
+  right: 6vw;
+  width: 120px;
+  height: 120px;
+  transform: translateZ(50px);
+  animation: floatSun 6s ease-in-out infinite alternate;
+}
+
+.sun-core {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fde047 0%, #fbbf24 60%, #f59e0b 100%);
+  box-shadow: 0 0 50px rgba(253, 224, 71, 0.95), 0 0 100px rgba(245, 158, 11, 0.7);
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  transform: translateZ(40px);
+}
+
+.sun-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px dashed rgba(251, 191, 36, 0.7);
+  transform-style: preserve-3d;
+}
+
+.sun-ring.ring-1 {
+  width: 110px;
+  height: 110px;
+  top: 5px;
+  left: 5px;
+  transform: rotateX(65deg) rotateZ(0deg);
+  animation: spinRing1 12s linear infinite;
+}
+
+.sun-ring.ring-2 {
+  width: 135px;
+  height: 135px;
+  top: -8px;
+  left: -8px;
+  border-style: dotted;
+  border-color: rgba(253, 224, 71, 0.5);
+  transform: rotateY(65deg) rotateZ(0deg);
+  animation: spinRing2 16s linear infinite reverse;
+}
+
+@keyframes spinRing1 {
+  from { transform: rotateX(65deg) rotateZ(0deg); }
+  to { transform: rotateX(65deg) rotateZ(360deg); }
+}
+
+@keyframes spinRing2 {
+  from { transform: rotateY(65deg) rotateZ(0deg); }
+  to { transform: rotateY(65deg) rotateZ(360deg); }
+}
+
+@keyframes floatSun {
+  0% { transform: translateZ(50px) translateY(0); }
+  100% { transform: translateZ(75px) translateY(-14px); }
+}
+
+/* 3D Volumetric Floating Clouds */
+.cloud-3d {
+  width: 170px;
+  height: 75px;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+.cloud-far-left {
+  top: -10px;
+  left: 3vw;
+  transform: translateZ(-30px) scale(0.85);
+  animation: floatCloudFarLeft 10s ease-in-out infinite alternate;
+}
+
+.cloud-left {
+  top: 15px;
+  left: 14vw;
+  transform: translateZ(-20px) scale(0.9);
+  animation: floatCloudLeft 9s ease-in-out infinite alternate;
+}
+
+.cloud-center {
+  top: -50px;
+  left: 42vw;
+  transform: translateZ(-50px) scale(0.85);
+  opacity: 0.45;
+  animation: floatCloudCenter 12s ease-in-out infinite alternate;
+}
+
+.cloud-right {
+  top: 20px;
+  right: 14vw;
+  transform: translateZ(-20px) scale(0.9);
+  animation: floatCloudRight 11s ease-in-out infinite alternate;
+}
+
+.cloud-far-right {
+  top: -10px;
+  right: 3vw;
+  transform: translateZ(-30px) scale(0.85);
+  animation: floatCloudFarRight 13s ease-in-out infinite alternate;
+}
+
+.cloud-puff {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #e2e8f0 70%, #cbd5e1 100%);
+  transform-style: preserve-3d;
+  box-shadow: inset 0 -4px 8px rgba(15, 23, 42, 0.15), 0 8px 16px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .cloud-puff {
+  background: radial-gradient(circle at 35% 35%, #64748b 0%, #334155 70%, #1e293b 100%);
+  box-shadow: inset 0 -4px 8px rgba(0, 0, 0, 0.4), 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.cloud-puff.puff-1 { width: 65px; height: 65px; top: 10px; left: 10px; transform: translateZ(10px); }
+.cloud-puff.puff-2 { width: 80px; height: 80px; top: -15px; left: 40px; transform: translateZ(20px); }
+.cloud-puff.puff-3 { width: 70px; height: 70px; top: 5px; left: 95px; transform: translateZ(15px); }
+.cloud-puff.puff-4 { width: 55px; height: 45px; top: 30px; left: 30px; transform: translateZ(5px); }
+.cloud-puff.puff-5 { width: 60px; height: 45px; top: 30px; left: 75px; transform: translateZ(8px); }
+
+@keyframes floatCloudFarLeft {
+  0% { transform: translateZ(-30px) scale(0.85) translateY(0); }
+  100% { transform: translateZ(-10px) scale(0.85) translateY(-14px) translateX(15px); }
+}
+
+@keyframes floatCloudLeft {
+  0% { transform: translateZ(-20px) scale(0.9) translateX(0) translateY(0); }
+  100% { transform: translateZ(0px) scale(0.9) translateX(25px) translateY(-10px); }
+}
+
+@keyframes floatCloudCenter {
+  0% { transform: translateZ(-50px) scale(0.85) translateY(0); }
+  100% { transform: translateZ(-30px) scale(0.85) translateY(12px); }
+}
+
+@keyframes floatCloudRight {
+  0% { transform: translateZ(-20px) scale(0.9) translateX(0) translateY(0); }
+  100% { transform: translateZ(0px) scale(0.9) translateX(-20px) translateY(12px); }
+}
+
+@keyframes floatCloudFarRight {
+  0% { transform: translateZ(-30px) scale(0.85) translateY(0); }
+  100% { transform: translateZ(-10px) scale(0.85) translateY(-16px) translateX(-15px); }
+}
+
+/* 3D Lightning Bolts */
+.lightning-3d,
+.bolt-1,
+.bolt-2 {
+  display: none !important;
+  font-size: 30px;
+  filter: drop-shadow(0 0 16px rgba(253, 224, 71, 0.8));
+  animation: lightningPulse 3s infinite ease-in-out;
+}
+
+@keyframes lightningPulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.9) translateZ(120px); }
+  50% { opacity: 1; transform: scale(1.2) translateZ(150px); }
+}
+
+/* 3D Weather Crystals & Orbs */
+.crystal-3d,
+.crystal-1,
+.crystal-2,
+.crystal-3 {
+  display: none !important;
+  font-size: 24px;
+  animation: crystalSpin 8s linear infinite;
+  filter: drop-shadow(0 4px 12px rgba(56, 189, 248, 0.4));
+}
+
+@keyframes crystalSpin {
+  0% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(180deg) translateY(-10px); }
+  100% { transform: rotate(360deg) translateY(0); }
+}
+
+/* 3D Rain Drops */
+.drops-container-3d {
+  display: none !important;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: translateZ(120px);
+}
+
+.drop-3d {
+  position: absolute;
+  width: 12px;
+  height: 22px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.9) 0%, rgba(2, 132, 199, 0.5) 100%);
+  backdrop-filter: blur(4px);
+  border-radius: 50% 50% 60% 60% / 70% 70% 40% 40%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
+  animation: dropFloat 4s ease-in-out infinite alternate;
+}
+
+.drop-1 { top: 20%; left: 4vw; transform: rotate(-15deg) translateZ(100px); animation-delay: 0s; }
+.drop-2 { top: 60%; left: 12vw; transform: rotate(10deg) translateZ(140px); animation-delay: 0.7s; }
+.drop-3 { top: 15%; left: 32vw; transform: rotate(12deg) translateZ(90px); animation-delay: 1.2s; }
+.drop-4 { top: 75%; left: 38vw; transform: rotate(-8deg) translateZ(130px); animation-delay: 1.8s; }
+.drop-5 { top: 70%; left: 52vw; transform: rotate(5deg) translateZ(150px); animation-delay: 2.3s; }
+.drop-6 { top: 10%; left: 68vw; transform: rotate(-5deg) translateZ(80px); animation-delay: 0.4s; }
+.drop-7 { top: 80%; left: 76vw; transform: rotate(15deg) translateZ(120px); animation-delay: 1.1s; }
+.drop-8 { top: 25%; left: 84vw; transform: rotate(-10deg) translateZ(135px); animation-delay: 1.6s; }
+.drop-9 { top: 65%; left: 92vw; transform: rotate(8deg) translateZ(110px); animation-delay: 2.1s; }
+.drop-10 { top: 35%; left: 22vw; transform: rotate(-12deg) translateZ(95px); animation-delay: 0.9s; }
+.drop-11 { top: 45%; left: 58vw; transform: rotate(6deg) translateZ(145px); animation-delay: 1.4s; }
+.drop-12 { top: 85%; left: 44vw; transform: rotate(-14deg) translateZ(125px); animation-delay: 2.5s; }
+
+@keyframes dropFloat {
+  0% { transform: translateY(0) rotate(-10deg) scale(1); opacity: 0.7; }
+  100% { transform: translateY(18px) rotate(10deg) scale(1.15); opacity: 1; }
+}
+
+/* 3D Wind Rings */
+.wind-ring-3d {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid rgba(56, 189, 248, 0.25);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
+  transform-style: preserve-3d;
+}
+
+.ring-far-left {
+  width: 280px;
+  height: 280px;
+  top: -20px;
+  left: -40px;
+  transform: rotateX(75deg) rotateY(30deg) translateZ(40px);
+  animation: pulseWindRing 9s ease-in-out infinite alternate;
+}
+
+.ring-left {
+  width: 340px;
+  height: 340px;
+  top: 40px;
+  left: 20vw;
+  transform: rotateX(75deg) rotateY(20deg) translateZ(30px);
+  animation: pulseWindRing 8s ease-in-out infinite alternate;
+}
+
+.ring-right {
+  width: 300px;
+  height: 300px;
+  bottom: -40px;
+  right: 20vw;
+  transform: rotateX(65deg) rotateY(-25deg) translateZ(40px);
+  animation: pulseWindRing 10s ease-in-out infinite alternate-reverse;
+}
+
+.ring-far-right {
+  width: 260px;
+  height: 260px;
+  top: -30px;
+  right: -30px;
+  transform: rotateX(70deg) rotateY(-35deg) translateZ(50px);
+  animation: pulseWindRing 11s ease-in-out infinite alternate;
+}
+
+@keyframes pulseWindRing {
+  0% { transform: scale(0.95) rotateZ(0deg); opacity: 0.3; }
+  100% { transform: scale(1.08) rotateZ(180deg); opacity: 0.7; }
+}
+
+/* Dynamic 3D State Condition Overrides */
+.hero-3d-scene-full.condition-clear .sun-3d {
+  opacity: 1;
+  transform: translateZ(95px) scale(1.25);
+  transition: all 0.8s ease;
+}
+
+.hero-3d-scene-full.condition-clear .cloud-3d {
+  opacity: 0.3;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.05));
+  transition: all 0.8s ease;
+}
+
+.hero-3d-scene-full.condition-clear .drops-container-3d,
+.hero-3d-scene-full.condition-clear .lightning-3d,
+.hero-3d-scene-full.condition-clear .bolt-1,
+.hero-3d-scene-full.condition-clear .bolt-2,
+.hero-3d-scene-full.condition-clear .crystal-3d,
+.hero-3d-scene-full.condition-clear .crystal-1,
+.hero-3d-scene-full.condition-clear .crystal-2,
+.hero-3d-scene-full.condition-clear .crystal-3 {
+  display: none !important;
+}
+
+.hero-3d-scene-full.condition-cloudy .sun-3d {
+  opacity: 0.35;
+  transform: translateZ(30px) scale(0.85);
+  transition: all 0.8s ease;
+}
+
+.hero-3d-scene-full.condition-cloudy .cloud-3d {
+  opacity: 0.95;
+  transition: all 0.8s ease;
+}
+
+.hero-3d-scene-full.condition-cloudy .drops-container-3d,
+.hero-3d-scene-full.condition-cloudy .lightning-3d,
+.hero-3d-scene-full.condition-cloudy .bolt-1,
+.hero-3d-scene-full.condition-cloudy .bolt-2,
+.hero-3d-scene-full.condition-cloudy .crystal-3d,
+.hero-3d-scene-full.condition-cloudy .crystal-1,
+.hero-3d-scene-full.condition-cloudy .crystal-2,
+.hero-3d-scene-full.condition-cloudy .crystal-3 {
+  display: none !important;
+}
+
+.hero-3d-scene-full.condition-rain .sun-3d {
+  opacity: 0.25;
+  transform: translateZ(20px) scale(0.7);
+  transition: all 0.8s ease;
+}
+
+.hero-3d-scene-full.condition-rain .cloud-puff {
+  background: radial-gradient(circle at 35% 35%, #475569 0%, #334155 70%, #1e293b 100%);
+  transition: all 0.8s ease;
+}
+
+.hero-3d-scene-full.condition-rain .drops-container-3d {
+  display: block !important;
+  opacity: 1;
+}
+
+.hero-3d-scene-full.condition-rain .drop-3d {
+  animation: rainFastFall 0.8s linear infinite !important;
+}
+
+@keyframes rainFastFall {
+  0% { transform: translateY(-20px) scaleY(1.2); opacity: 0.9; }
+  100% { transform: translateY(120px) scaleY(1); opacity: 0.2; }
+}
+
+.hero-3d-scene-full.condition-rain .lightning-3d,
+.hero-3d-scene-full.condition-rain .bolt-1,
+.hero-3d-scene-full.condition-rain .bolt-2,
+.hero-3d-scene-full.condition-rain .crystal-3d,
+.hero-3d-scene-full.condition-rain .crystal-1,
+.hero-3d-scene-full.condition-rain .crystal-2,
+.hero-3d-scene-full.condition-rain .crystal-3 {
+  display: none !important;
+}
+
+.hero-3d-scene-full.condition-thunderstorm .sun-3d {
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.hero-3d-scene-full.condition-thunderstorm .cloud-puff {
+  background: radial-gradient(circle at 35% 35%, #334155 0%, #1e293b 70%, #0f172a 100%);
+  box-shadow: inset 0 -4px 12px rgba(0, 0, 0, 0.7), 0 10px 30px rgba(0,0,0,0.5);
+  transition: all 0.8s ease;
+}
+
+.hero-3d-scene-full.condition-thunderstorm .lightning-3d,
+.hero-3d-scene-full.condition-thunderstorm .bolt-1,
+.hero-3d-scene-full.condition-thunderstorm .bolt-2 {
+  display: block !important;
+  opacity: 1;
+  animation: thunderStrike 1.2s ease-in-out infinite !important;
+}
+
+@keyframes thunderStrike {
+  0%, 100% { opacity: 0.1; transform: scale(0.8) translateZ(110px); }
+  25% { opacity: 1; transform: scale(1.3) translateZ(160px); filter: drop-shadow(0 0 30px #fde047); }
+  35% { opacity: 0.4; transform: scale(1) translateZ(130px); }
+  45% { opacity: 1; transform: scale(1.4) translateZ(170px); filter: drop-shadow(0 0 40px #38bdf8); }
+}
+
+.hero-3d-scene-full.condition-thunderstorm .drops-container-3d {
+  display: block !important;
+}
+
+.hero-3d-scene-full.condition-thunderstorm .crystal-3d,
+.hero-3d-scene-full.condition-thunderstorm .crystal-1,
+.hero-3d-scene-full.condition-thunderstorm .crystal-2,
+.hero-3d-scene-full.condition-thunderstorm .crystal-3 {
+  display: none !important;
+}
+
+.hero-3d-scene-full.condition-snow .sun-3d {
+  opacity: 0.4;
+  transform: translateZ(40px) scale(0.8);
+}
+
+.hero-3d-scene-full.condition-snow .cloud-puff {
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #f1f5f9 70%, #cbd5e1 100%);
+  transition: all 0.8s ease;
+}
+
+.hero-3d-scene-full.condition-snow .crystal-3d,
+.hero-3d-scene-full.condition-snow .crystal-1,
+.hero-3d-scene-full.condition-snow .crystal-2,
+.hero-3d-scene-full.condition-snow .crystal-3 {
+  display: block !important;
+  opacity: 1;
+  animation: snowDrift 6s ease-in-out infinite alternate !important;
+}
+
+@keyframes snowDrift {
+  0% { transform: translateY(0) rotate(0deg) scale(0.9); }
+  100% { transform: translateY(40px) rotate(360deg) scale(1.2); }
+}
+
+.hero-3d-scene-full.condition-snow .drops-container-3d,
+.hero-3d-scene-full.condition-snow .lightning-3d,
+.hero-3d-scene-full.condition-snow .bolt-1,
+.hero-3d-scene-full.condition-snow .bolt-2 {
+  display: none !important;
+}
+
+/* Night Mode (3D Moon Transformation) */
+.hero-3d-scene-full.is-night .sun-core {
+  background: radial-gradient(circle, #f8fafc 0%, #cbd5e1 60%, #94a3b8 100%) !important;
+  box-shadow: 0 0 50px rgba(248, 250, 252, 0.9), 0 0 100px rgba(203, 213, 225, 0.6) !important;
+}
+
+.hero-3d-scene-full.is-night .sun-ring {
+  border-color: rgba(203, 213, 225, 0.4) !important;
+}
