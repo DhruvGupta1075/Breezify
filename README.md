@@ -138,9 +138,9 @@ Breezify/
 
 ## 👥 Authors
 
-- **Mauli Garg** — UI/UX & Web Design
-- **Dhruv Gupta** — Lead Web Development & API Integration
-- **Dhruv Bansal** — Systems & Technical Support
+- **Mauli Garg** — Frontend & UI/UX Engineer
+- **Dhruv Gupta** — Lead Full-Stack & API Engineer
+- **Dhruv Bansal** — Backend & Infrastructure Engineer
 
 ---
 

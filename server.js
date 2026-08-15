@@ -19,3 +19,5 @@ app.get("/t&c", (req, res) => res.sendFile(path.join(__dirname, "src", "t&c.html
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);
 });
+
+module.exports = app;
