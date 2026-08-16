@@ -41,15 +41,20 @@
   font-family: 'Arima', 'Playfair Display', Georgia, serif;
   font-size: clamp(1.4rem, 4vw, 2.8rem);
   font-weight: 700;
-  color: #f8fafc;
+  color: #0f172a;
   letter-spacing: -0.5px;
   display: inline-block;
   position: relative;
   z-index: 10;
-  text-shadow: 0 4px 16px rgba(15, 23, 42, 0.7);
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.85);
   word-break: break-word;
   text-align: center;
   padding: 0 10px;
+}
+
+body.dark-mode .hero-location-title {
+  color: #f8fafc;
+  text-shadow: 0 4px 16px rgba(15, 23, 42, 0.7);
 }
 
 .live-reading-main {
@@ -94,7 +99,7 @@
   font-family: 'Poppins', 'Inter', sans-serif;
   font-size: 3.4rem;
   font-weight: 700;
-  color: #f8fafc;
+  color: #0f172a;
   line-height: 1;
   letter-spacing: -1px;
 }
@@ -102,9 +107,17 @@
 .gauge-condition {
   font-family: 'Inter', sans-serif;
   font-size: 13px;
-  color: #94a3b8;
+  color: #334155;
   margin-top: 8px;
-  font-weight: 500;
+  font-weight: 600;
+}
+
+body.dark-mode .gauge-temp {
+  color: #f8fafc;
+}
+
+body.dark-mode .gauge-condition {
+  color: #94a3b8;
 }
 
 /* Right Stats Panel */
@@ -127,7 +140,7 @@
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 1.5px;
-  color: #64748b;
+  color: #475569;
   text-transform: uppercase;
 }
 
@@ -135,10 +148,22 @@
   font-family: 'Poppins', 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 700;
-  color: #f8fafc;
+  color: #0f172a;
 }
 
 .stat-divider {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body.dark-mode .stat-label {
+  color: #64748b;
+}
+
+body.dark-mode .stat-value {
+  color: #f8fafc;
+}
+
+body.dark-mode .stat-divider {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -167,8 +192,12 @@
   font-family: 'Arima', 'Poppins', serif;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #f8fafc;
+  color: #0f172a;
   letter-spacing: -0.3px;
+}
+
+body.dark-mode .panel-header h2 {
+  color: #f8fafc;
 }
 
 .instrument-grid {
@@ -204,20 +233,21 @@
 }
 
 .instrument-card {
-  background: #172030;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 20px;
   padding: 20px 22px;
   display: flex;
   flex-direction: column;
   min-height: 170px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .instrument-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(56, 189, 248, 0.3);
+  border-color: rgba(2, 132, 199, 0.3);
+  box-shadow: 0 12px 30px rgba(2, 132, 199, 0.08);
 }
 
 .card-label {
@@ -238,20 +268,20 @@
   font-family: 'Poppins', sans-serif;
   font-size: 26px;
   font-weight: 700;
-  color: #f8fafc;
+  color: #0f172a;
   line-height: 1.2;
 }
 
 .card-main-val .unit {
   font-size: 15px;
   font-weight: 500;
-  color: #94a3b8;
+  color: #64748b;
 }
 
 .card-sub-val {
   font-family: 'Inter', sans-serif;
   font-size: 13px;
-  color: #94a3b8;
+  color: #475569;
   margin-top: 4px;
   font-weight: 500;
 }
@@ -269,7 +299,7 @@
   position: relative;
   width: 58px;
   height: 58px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 50%;
 }
 
@@ -294,7 +324,7 @@
   height: 26px;
   margin-top: -13px;
   margin-left: -2px;
-  background: linear-gradient(to bottom, #f97316 50%, #475569 50%);
+  background: linear-gradient(to bottom, #f97316 50%, #64748b 50%);
   clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
   transform-origin: center center;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -314,6 +344,14 @@
   height: 60px;
 }
 
+.uv-arc-track {
+  stroke: rgba(0, 0, 0, 0.08);
+}
+
+body.dark-mode .uv-arc-track {
+  stroke: rgba(255, 255, 255, 0.12);
+}
+
 /* Sunrise & Sunset Arc */
 .sun-arc-container {
   height: 60px;
@@ -327,13 +365,21 @@
   height: 60px;
 }
 
+.sun-arc-track {
+  stroke: rgba(245, 158, 11, 0.5);
+}
+
+body.dark-mode .sun-arc-track {
+  stroke: rgba(251, 191, 36, 0.4);
+}
+
 .sun-times-row {
   display: flex;
   justify-content: space-between;
   font-family: 'Inter', sans-serif;
   font-size: 13px;
   font-weight: 600;
-  color: #f8fafc;
+  color: #334155;
   margin-top: auto;
 }
 
@@ -535,6 +581,49 @@
 }
 
 /* Dashboard Dark Mode */
+body.dark-mode .instrument-card {
+  background: #172030;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .instrument-card:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .card-label {
+  color: #64748b;
+}
+
+body.dark-mode .card-main-val {
+  color: #f8fafc;
+}
+
+body.dark-mode .card-main-val .unit {
+  color: #94a3b8;
+}
+
+body.dark-mode .card-sub-val {
+  color: #94a3b8;
+}
+
+body.dark-mode .compass-dial {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode .compass-dir {
+  color: #64748b;
+}
+
+body.dark-mode .compass-needle {
+  background: linear-gradient(to bottom, #f97316 50%, #475569 50%);
+}
+
+body.dark-mode .sun-times-row {
+  color: #f8fafc;
+}
+
 body.dark-mode .hourlyweather {
   background-color: #1e293b;
   border: 1px solid #334155;
@@ -571,11 +660,17 @@ body.dark-mode .divider {
   border-top-color: #334155;
 }
 
-body.dark-mode .carousel .card .day {
-  color: #e2e8f0;
+body.dark-mode .card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
-body.dark-mode .carousel .card .temperature {
+body.dark-mode .card .day {
+  color: #f8fafc;
+}
+
+body.dark-mode .card .temperature {
   color: #38bdf8;
 }
 

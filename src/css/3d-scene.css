@@ -9,6 +9,11 @@
   overflow: hidden;
   perspective: 1200px;
   transform-style: preserve-3d;
+  background: linear-gradient(180deg, rgba(224, 242, 254, 0.5) 0%, rgba(241, 245, 249, 0.1) 100%);
+}
+
+body.dark-mode .hero-fullwidth-wrapper {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(15, 23, 42, 0) 100%);
 }
 
 .hero-3d-scene-full {
@@ -257,9 +262,14 @@ body.dark-mode .cloud-puff {
 .wind-ring-3d {
   position: absolute;
   border-radius: 50%;
-  border: 1.5px solid rgba(56, 189, 248, 0.25);
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
+  border: 1.5px solid rgba(2, 132, 199, 0.18);
+  box-shadow: 0 0 15px rgba(2, 132, 199, 0.06);
   transform-style: preserve-3d;
+}
+
+body.dark-mode .wind-ring-3d {
+  border-color: rgba(56, 189, 248, 0.25);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
 }
 
 .ring-far-left {

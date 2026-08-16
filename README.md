@@ -206,7 +206,7 @@ Open **`http://localhost:2024`** in your browser.
 |---|---|
 | **Mauli Garg** | Frontend & UI/UX Engineer — glassmorphic design systems, responsive components, 3D visual experiences |
 | **Dhruv Gupta** | Lead Full-Stack & API Engineer — system architecture, WeatherAPI & Open-Meteo pipelines, state controllers |
-| **Dhruv Bansal** | Backend & Infrastructure Engineer — built the Express proxy server (`server.js`), implemented secure `/api/current` and `/api/search` endpoints to keep the `WEATHER_API_KEY` server-side and out of client JS, managed environment configuration with `dotenv` and `.env`/`.env.example`, and handled the Vercel deployment setup (`vercel.json`) |
+| **Dhruv Bansal** | Backend & Infrastructure Engineer — built the Express proxy server (`server.js`), implemented secure `/api/current` and `/api/search` endpoints to keep the `WEATHER_API_KEY` server-side and out of client JS, managed environment configuration with `dotenv` and `.env`/`.env.example
 
 ---
 
@@ -215,3 +215,11 @@ Open **`http://localhost:2024`** in your browser.
 This project is licensed under the ISC License.
 
 <p align="center">Made with ☁️ and a lot of CSS 3D transforms.</p>
+API Engineer
+- **Dhruv Bansal** — Backend & Infrastructure Engineer
+
+---
+
+## 📄 License
+
+This project is licensed under the **ISC License**.

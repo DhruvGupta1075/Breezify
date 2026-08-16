@@ -77,8 +77,21 @@ header {
   color: white;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Arima", 'Poppins', sans-serif;
+  color: #0f172a;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #f8fafc;
+}
+
+h1 {
   font-weight: 700;
   font-size: 1.6rem;
   letter-spacing: -0.5px;
