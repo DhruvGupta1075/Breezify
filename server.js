@@ -1,3 +1,5 @@
+
+
 require("dotenv").config();
 const express = require("express");
 const path = require("path");
@@ -80,11 +82,13 @@ app.get("/api/search", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
-  if (!WEATHER_API_KEY) {
-    console.warn("WARNING: WEATHER_API_KEY is not set in .env");
-  }
-});
+if (require.main === module || !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Server started on port ${PORT}`);
+    if (!WEATHER_API_KEY) {
+      console.warn("WARNING: WEATHER_API_KEY is not set in .env");
+    }
+  });
+}
 
 module.exports = app;
