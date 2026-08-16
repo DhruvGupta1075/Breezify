@@ -2,7 +2,7 @@
    About Us Specific Glassmorphic Styles & Layout
    ========================================================================== */
 
-.wrapper {
+.about-wrapper {
   max-width: 1140px;
   margin: 0 auto;
   padding: 120px 20px 60px 20px;
@@ -142,7 +142,7 @@ body.dark-mode .team_member p.desc {
 }
 
 @media (max-width: 768px) {
-  .wrapper {
+  .about-wrapper {
     padding: 100px 16px 40px 16px;
   }
 
@@ -156,7 +156,7 @@ body.dark-mode .team_member p.desc {
 }
 
 @media (max-width: 480px) {
-  .wrapper {
+  .about-wrapper {
     padding: 80px 12px 32px 12px;
   }
 

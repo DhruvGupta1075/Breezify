@@ -426,33 +426,12 @@
   text-overflow: ellipsis;
 }
 
-.rain-chance {
-  display: flex;
-  align-items: center;
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  color: #0284c7;
-  background: rgba(56, 189, 248, 0.1);
-  padding: 4px 10px;
-  border-radius: 20px;
-}
-
 .divider {
   border-top: 1px solid #f1f5f9;
   margin: 6px 0;
 }
 
 /* Forecast Carousel */
-h2.forecast-title {
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-
 .wrapper {
   display: flex;
   align-items: center;
@@ -590,13 +569,6 @@ body.dark-mode .hour .rain-chance {
 
 body.dark-mode .divider {
   border-top-color: #334155;
-}
-
-body.dark-mode .carousel .card {
-  background-color: #1e293b;
-  border: 1px solid #334155;
-  color: #f8fafc;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 body.dark-mode .carousel .card .day {

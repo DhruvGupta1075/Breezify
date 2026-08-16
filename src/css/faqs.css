@@ -1,12 +1,5 @@
 /* FAQ Specific Styles */
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #E4EAF2;
-  color: #333;
-  line-height: 1.6;
-}
-
 section#faq {
   width: 90%;
   max-width: 800px;
@@ -53,9 +46,6 @@ details[open] summary {
 .faq-item summary {
   cursor: pointer;
   position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .faq-item summary::after {
@@ -64,15 +54,4 @@ details[open] summary {
   font-weight: bold;
   margin-left: 10px;
   transition: transform 0.3s ease;
-}
-
-.faq-item[open] summary::after {
-  content: "-";
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-left: 10px;
-}
-
-#faq {
-  color: #fff;
-}
+}

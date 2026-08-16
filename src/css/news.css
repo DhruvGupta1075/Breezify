@@ -8,12 +8,14 @@
   padding: 0 20px;
 }
 
-.news h2.news-title {
+.news h2.news-title,
+.section-heading {
   text-align: center;
   font-family: 'Poppins', sans-serif;
-  font-size: 1.6rem;
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
   font-weight: 600;
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .news-container {
