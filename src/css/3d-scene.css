@@ -471,3 +471,101 @@ body.dark-mode .cloud-puff {
 .hero-3d-scene-full.is-night .sun-ring {
   border-color: rgba(203, 213, 225, 0.4) !important;
 }
+
+/* =============================================
+   RESPONSIVE 3D SCENE
+   ============================================= */
+
+@media (max-width: 768px) {
+  .hero-fullwidth-wrapper {
+    perspective: 800px;
+  }
+
+  .sun-3d {
+    width: 80px;
+    height: 80px;
+    right: 4vw;
+    top: 8px;
+  }
+
+  .sun-core {
+    width: 50px;
+    height: 50px;
+    top: 15px;
+    left: 15px;
+  }
+
+  .sun-ring.ring-1 {
+    width: 74px;
+    height: 74px;
+  }
+
+  .sun-ring.ring-2 {
+    width: 90px;
+    height: 90px;
+  }
+
+  .cloud-3d {
+    width: 120px;
+    height: 55px;
+  }
+
+  .cloud-puff.puff-1 { width: 46px; height: 46px; }
+  .cloud-puff.puff-2 { width: 56px; height: 56px; top: -10px; left: 28px; }
+  .cloud-puff.puff-3 { width: 50px; height: 50px; left: 65px; }
+  .cloud-puff.puff-4 { width: 40px; height: 32px; }
+  .cloud-puff.puff-5 { width: 42px; height: 32px; left: 55px; }
+
+  .cloud-center,
+  .ring-left,
+  .ring-right {
+    display: none;
+  }
+
+  .ring-far-left {
+    width: 160px;
+    height: 160px;
+    left: -20px;
+  }
+
+  .ring-far-right {
+    width: 150px;
+    height: 150px;
+    right: -20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cloud-far-left,
+  .cloud-far-right {
+    display: none;
+  }
+
+  .cloud-left {
+    left: 2vw;
+    top: 10px;
+  }
+
+  .cloud-right {
+    right: 2vw;
+    top: 10px;
+  }
+
+  .sun-3d {
+    width: 60px;
+    height: 60px;
+    top: 6px;
+  }
+
+  .sun-core {
+    width: 38px;
+    height: 38px;
+    top: 11px;
+    left: 11px;
+  }
+
+  .ring-far-left,
+  .ring-far-right {
+    display: none;
+  }
+}

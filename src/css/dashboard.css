@@ -39,7 +39,7 @@
 
 .hero-location-title {
   font-family: 'Arima', 'Playfair Display', Georgia, serif;
-  font-size: 2.8rem;
+  font-size: clamp(1.4rem, 4vw, 2.8rem);
   font-weight: 700;
   color: #f8fafc;
   letter-spacing: -0.5px;
@@ -47,6 +47,9 @@
   position: relative;
   z-index: 10;
   text-shadow: 0 4px 16px rgba(15, 23, 42, 0.7);
+  word-break: break-word;
+  text-align: center;
+  padding: 0 10px;
 }
 
 .live-reading-main {
@@ -55,9 +58,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 80px;
+  gap: 60px;
   margin-top: 20px;
   flex-wrap: wrap;
+  padding: 0 16px;
 }
 
 /* Circular Dashed Tick Gauge */
@@ -181,10 +185,21 @@
 
 @media (max-width: 576px) {
   .instrument-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
   .live-reading-main {
-    gap: 40px;
+    gap: 30px;
+  }
+  .instrument-panel-section {
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .instrument-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }
 
@@ -329,15 +344,16 @@
   gap: 30px;
   margin: 40px auto;
   max-width: 1200px;
-  padding: 0 20px;
+  padding: 0 16px;
   flex-wrap: wrap;
 }
 
 .hourlyweather {
-  flex: 1 1 550px;
-  max-width: 620px;
+  flex: 1 1 300px;
+  max-width: 900px;
+  width: 100%;
   background: #ffffff;
-  padding: 28px;
+  padding: 22px;
   border-radius: 24px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
   border: 1px solid rgba(0, 0, 0, 0.05);
@@ -400,11 +416,14 @@
 .condition {
   flex: 1;
   text-align: left;
-  padding-left: 20px;
+  padding-left: 12px;
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   color: #64748b;
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .rain-chance {
@@ -440,7 +459,7 @@ h2.forecast-title {
   justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 10px 40px;
+  padding: 10px 52px;
   position: relative;
   overflow: hidden;
 }
@@ -594,4 +613,185 @@ body.dark-mode .wrapper #right {
   background: rgba(30, 41, 59, 0.9);
   color: #f8fafc;
   border: 1px solid #334155;
+}
+
+/* =============================================
+   RESPONSIVE MEDIA QUERIES — DASHBOARD
+   ============================================= */
+
+@media (max-width: 900px) {
+  .hourcontainer {
+    gap: 20px;
+  }
+  .hourlyweather {
+    padding: 20px;
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Hero section */
+  .hero-fullwidth-wrapper {
+    padding-bottom: 24px;
+    min-height: 280px;
+  }
+
+  .live-reading-header {
+    margin-bottom: 16px;
+  }
+
+  .temp-gauge-container {
+    width: 170px;
+    height: 170px;
+  }
+
+  .gauge-temp {
+    font-size: 2.6rem;
+  }
+
+  .hero-stats-panel {
+    min-width: 200px;
+  }
+
+  .stat-value {
+    font-size: 16px;
+  }
+
+  /* 10-day forecast */
+  .hour {
+    padding: 10px 10px;
+    gap: 8px;
+  }
+
+  .time {
+    font-size: 13px;
+    min-width: 60px !important;
+  }
+
+  .high-temp {
+    font-size: 18px;
+  }
+
+  /* Wrapper arrows */
+  .wrapper {
+    padding: 10px 44px;
+  }
+
+  .wrapper > i,
+  .wrapper #left,
+  .wrapper #right {
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+    font-size: 0.9rem;
+  }
+
+  /* Carousel cards */
+  .card {
+    width: 150px;
+  }
+
+  /* Instrument panel */
+  .panel-header h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Hero gauge */
+  .temp-gauge-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  .gauge-temp {
+    font-size: 2.2rem;
+  }
+
+  .gauge-condition {
+    font-size: 11px;
+  }
+
+  .hero-stats-panel {
+    min-width: 160px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .stat-value {
+    font-size: 15px;
+  }
+
+  /* 10-day rows: hide condition text, show icon only */
+  .condition {
+    display: none;
+  }
+
+  .hour {
+    padding: 8px 6px;
+  }
+
+  /* News h2 */
+  .news h2 {
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+
+  /* Carousel */
+  .wrapper {
+    padding: 10px 40px;
+  }
+
+  .card {
+    width: 140px;
+  }
+
+  /* Instrument card */
+  .instrument-card {
+    padding: 16px;
+    min-height: 150px;
+  }
+
+  .card-main-val {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 420px) {
+  .live-reading-main {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .hero-stats-panel {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  .hero-stat-row {
+    justify-content: space-between;
+  }
+
+  /* Wrapper arrows tighter */
+  .wrapper {
+    padding: 10px 38px;
+  }
+
+  .wrapper > i,
+  .wrapper #left,
+  .wrapper #right {
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    font-size: 0.75rem;
+  }
+
+  .card {
+    width: 130px;
+  }
 }

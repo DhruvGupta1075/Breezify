@@ -154,3 +154,26 @@ body.dark-mode .team_member p.desc {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 80px 12px 32px 12px;
+  }
+
+  .about-hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .about-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .team_member {
+    padding: 28px 18px 24px 18px;
+  }
+
+  .team {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

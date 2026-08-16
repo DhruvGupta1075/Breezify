@@ -172,6 +172,7 @@ h1 {
 .input-search {
   height: 32px;
   width: 220px;
+  min-width: 0;
   border: none;
   padding: 0px 10px;
   font-size: 14px;
@@ -248,30 +249,88 @@ h1 {
 @media (max-width: 768px) {
   header {
     padding: 10px 16px;
+    height: auto;
+    min-height: 64px;
+    flex-wrap: nowrap;
+    gap: 8px;
   }
 
   .appname h1 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+  }
+
+  .header-right {
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .search-box {
+    padding: 4px 8px;
+  }
+
+  .input-search {
+    width: 130px;
   }
 
   .input-search:focus {
     width: 150px;
-  }
-}
-
-@media (max-width: 480px) {
-  .appname h1 {
-    font-size: 1.1rem;
-  }
-
-  .input-search:focus {
-    width: 120px;
   }
 
   .convert-circle {
     width: 36px;
     height: 36px;
     font-size: 13px;
+  }
+
+  .hero-fullwidth-wrapper {
+    margin-top: 64px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 8px 12px;
+    min-height: 58px;
+  }
+
+  .appname h1 {
+    font-size: 1rem;
+  }
+
+  .logo-image {
+    height: 36px !important;
+  }
+
+  .input-search {
+    width: 95px;
+  }
+
+  .input-search:focus {
+    width: 110px;
+  }
+
+  .input-search::placeholder {
+    font-size: 11px;
+  }
+
+  .convert-circle {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .hero-fullwidth-wrapper {
+    margin-top: 58px;
+  }
+}
+
+@media (max-width: 360px) {
+  .appname h1 {
+    display: none;
+  }
+
+  .input-search {
+    width: 80px;
   }
 }
 
@@ -387,7 +446,34 @@ h1 {
 
   .footer .row ul li {
     display: inline-block;
-    margin: 8px 10px;
+    margin: 8px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer .row ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .footer .row ul li {
+    margin: 4px 6px;
+  }
+
+  .footer .row ul li a {
+    font-size: 0.82rem;
+  }
+
+  .socialcard {
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .socialContainer {
+    width: 40px;
+    height: 40px;
   }
 }
 

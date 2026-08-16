@@ -276,3 +276,25 @@ body.dark-mode .contact-toast {
     padding: 36px 24px;
   }
 }
+
+@media (max-width: 480px) {
+  .contact-page-wrapper {
+    padding: 80px 12px 32px 12px;
+  }
+
+  .contact-form-section {
+    padding: 24px 16px;
+  }
+
+  .contact-form-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .contact-info-section {
+    padding: 24px 16px;
+  }
+
+  .contact-info-section h1 {
+    font-size: 1.5rem;
+  }
+}
