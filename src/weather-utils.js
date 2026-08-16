@@ -76,9 +76,9 @@ function getWindDirection(deg) {
 function formatTemperature(celsius, isCelsiusUnit = true) {
   if (celsius === null || celsius === undefined || isNaN(celsius)) return "—";
   if (!isCelsiusUnit) {
-    return `${((celsius * 9) / 5 + 32).toFixed(1)}°F`;
+    return `${Math.round((celsius * 9) / 5 + 32)}°`;
   }
-  return `${celsius.toFixed(1)}°C`;
+  return `${Math.round(celsius)}°`;
 }
 
 function buildGeocodingUrl(query, count = 6) {
